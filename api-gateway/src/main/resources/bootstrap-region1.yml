@@ -1,0 +1,12 @@
+eureka:
+  instance:
+    hostname: localhost
+    metadata-map:
+      zone: zone1-isolated
+  client:
+    region: region1
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+    availability-zones:
+      region2: zone2
+    fetch-remote-regions-registry: region2

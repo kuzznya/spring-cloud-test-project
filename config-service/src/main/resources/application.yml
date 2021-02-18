@@ -1,0 +1,11 @@
+server:
+  port: 0
+
+spring:
+  profiles:
+    include: native
+  cloud:
+    config:
+      server:
+        prefix: /config
+        native.search-locations: classpath:/configs

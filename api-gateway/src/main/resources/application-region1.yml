@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: eurekaService1
+          uri: ${EUREKA_SERVER:http://localhost:8761}
+          predicates:
+            - Path=/eureka-service-1/**
+          filters:
+            - StripPrefix=1
+        - id: eurekaService1Resources
+          uri: ${EUREKA_SERVER:http://localhost:8761}
+          predicates:
+            - Path=/eureka/**
+        - id: eurekaService2
+          uri: ${EUREKA_SERVER2:http://localhost:8762}
+          predicates:
+            - Path=/eureka-service-2/**
+          filters:
+            - StripPrefix=1
+        - id: configServer
+          uri: lb://CONFIG-SERVER-REGION1
+          predicates:
+            - Path=/config/**
+        - id: dummy
+          uri: lb://DUMMY-REGION1
+          predicates:
+            - Path=/dummy/**
+          filters:
+            - StripPrefix=1
+        - id: gatewayRegion2
+          uri: lb://GATEWAY-REGION2
+          predicates:
+            - Path=/region2/**
+          filters:
+            - StripPrefix=1

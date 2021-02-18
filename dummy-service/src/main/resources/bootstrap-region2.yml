@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8081/region1/config
+      discovery:
+        enabled: false
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    metadata-map:
+      zone: zone2-isolated
+  client:
+    region: region2
+    service-url:
+      defaultZone: ${EUREKA_SERVER2:http://127.0.0.1:8762/eureka}

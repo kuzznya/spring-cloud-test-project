@@ -1,0 +1,15 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    region: region1
+    service-url:
+      defaultZone: http://127.0.0.1:8762/eureka
+      zone2: http://127.0.0.1:8762/eureka
+    availability-zones:
+      region1: zone1,zone1-isolated
+      region2: zone2
+    fetch-remote-regions-registry: region2

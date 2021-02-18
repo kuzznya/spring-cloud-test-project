@@ -1,0 +1,18 @@
+server:
+  error:
+    include-message: always
+    include-exception: false
+    include-stacktrace: never
+
+spring:
+  cloud:
+    gateway:
+      metrics:
+        enabled: true
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: '*'
+      discovery:
+        locator:
+          enabled: true
