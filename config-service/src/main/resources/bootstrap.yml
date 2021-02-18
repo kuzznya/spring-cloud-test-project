@@ -1,6 +1,6 @@
 spring:
   application:
-    name: config-server-${eureka.client.region}
+    name: config-server
   cloud:
     loadbalancer:
       ribbon:

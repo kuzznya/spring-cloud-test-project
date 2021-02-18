@@ -1,9 +1,9 @@
 eureka:
   instance:
-    hostname: localhost
+    hostname: peer1
     metadata-map:
-      zone: zone1-isolated
+      zone: zone1
   client:
     region: region1
     service-url:
-      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA_SERVER:http://peer1:8761/eureka}

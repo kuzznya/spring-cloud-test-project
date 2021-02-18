@@ -3,13 +3,19 @@ server:
 
 eureka:
   instance:
-    hostname: 127.0.0.1
+    hostname: peer2
+    metadata-map:
+      zone: zone2
+  server:
+    remote-region-app-whitelist:
+      region1: EUREKA-SERVICE,GATEWAY-REGION1
+      region2: EUREKA-SERVICE,GATEWAY-REGION2
   client:
     region: region2
     service-url:
-      defaultZone: http://localhost:8761/eureka
-      zone1: http://localhost:8761/eureka
+      defaultZone: http://peer1:8761/eureka
+      zone1: http://peer1:8761/eureka
     availability-zones:
-      region2: zone2,zone2-isolated
       region1: zone1
+    fetch-registry: false
     fetch-remote-regions-registry: region1

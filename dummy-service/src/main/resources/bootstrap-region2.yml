@@ -7,10 +7,10 @@ spring:
 
 eureka:
   instance:
-    hostname: 127.0.0.1
+    hostname: peer2
     metadata-map:
-      zone: zone2-isolated
+      zone: zone2
   client:
     region: region2
     service-url:
-      defaultZone: ${EUREKA_SERVER2:http://127.0.0.1:8762/eureka}
+      defaultZone: ${EUREKA_SERVER2:http://peer2:8762/eureka}

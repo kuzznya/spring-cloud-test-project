@@ -22,7 +22,7 @@ spring:
           filters:
             - StripPrefix=1
         - id: dummy
-          uri: lb://DUMMY-REGION2
+          uri: lb://DUMMY
           predicates:
             - Path=/dummy/**
           filters:

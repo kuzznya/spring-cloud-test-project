@@ -1,6 +1,6 @@
 spring:
   application:
-    name: dummy-${eureka.client.region}
+    name: dummy
   cloud:
     config:
       fail-fast: true

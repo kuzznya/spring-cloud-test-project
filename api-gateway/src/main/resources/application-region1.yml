@@ -22,11 +22,11 @@ spring:
           filters:
             - StripPrefix=1
         - id: configServer
-          uri: lb://CONFIG-SERVER-REGION1
+          uri: lb://CONFIG-SERVER
           predicates:
             - Path=/config/**
         - id: dummy
-          uri: lb://DUMMY-REGION1
+          uri: lb://DUMMY
           predicates:
             - Path=/dummy/**
           filters:
